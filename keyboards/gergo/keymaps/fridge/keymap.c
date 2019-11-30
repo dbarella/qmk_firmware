@@ -14,38 +14,34 @@
 
 // Blank template at the bottom
 
-enum customKeycodes {
-  URL  = 1
-};
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
- * ,-------------------------------------------.                         ,-------------------------------------------.
- * | L1/ESC |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \   |
- * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+--------|
- * |Ctrl/BS |   A  |   S  |  D   |   F  |   G  | LMB  |           |      |   H  |   J  |   K  |   L  | ;  : |  ' "   |
- * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | RMB  |           |      |   N  |   M  | ,  < | . >  | /  ? |  - _ / RShift  |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ * ,-------------------------------------------.                         ,---------------------------------------------------.
+ * | L1/ESC |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \           |
+ * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+----------------|
+ * |Ctrl/BS |   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  ' "           |
+ * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+----------------|
+ * | LShift |   Z  |   X  |   C  |   V  |   B  | RMB  |           | M_DN |   N  |   M  | ,  < | . >  | /  ? |  - _ / RShift  |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+----------------'
  *                    .----------.   .-------.                                 .------.   .-----.
- *                    | Super/Del|   |Ent/ALT|                                 | Tab  |   |BKSP |
+ *                    | Super/Tab|   |Spc/ALT|                                 | BKSP |   |Del  |
  *                    '----------'   '-------'                                 `------.   '-----'
  *                                        ,-------.                      ,-------.
- *                                        | MMB   |                      | PgDn  |
+ *                                        | MMB   |                       | PgDn  |
  *                                 ,------|-------|                      |-------|------.
  *                                 | SYMB | NUMB  |                      | SYMB  | NUMB |
- *                                 | Space| Escape|                      | Mod   |Space |
+ *                                 | Space| Escape|                      | Mod   |Ent   |
  *                                 |      |       |                      |       |      |
  *                                 `--------------'                      `--------------'
  */
 [BASE] = LAYOUT_gergo(
-    LT(NUMB, KC_ESC),       KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                          KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_PIPE,
-    MT(MOD_LCTL, KC_BSPC),  KC_A,  KC_S,   KC_D,   KC_F, KC_G, KC_BTN1,                       KC_TRNS,  KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_QUOT,
-    KC_LSFT,                KC_Z,  KC_X,   KC_C,   KC_V, KC_B, KC_BTN2, KC_BTN3,     KC_PGDN, KC_BSPC,  KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_MINS),
-  MT(MOD_LGUI, KC_DEL), MT(MOD_LALT, KC_ENT), LT(SYMB, KC_SPC), LT(NUMB, KC_ESC),    LT(SYMB, KC_ENT), LT(NUMB, KC_SPC), KC_TAB, KC_BSPC
+    LT(NUMB, KC_ESC),       KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_PIPE,
+    MT(MOD_LCTL, KC_BSPC),  KC_A,  KC_S,   KC_D,   KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,   KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_QUOT,
+    KC_LSFT,                KC_Z,  KC_X,   KC_C,   KC_V, KC_B, KC_BTN2, KC_BTN3,     KC_PGDN, KC_MS_WH_DOWN, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_MINS),
+  MT(MOD_LGUI, KC_TAB), MT(MOD_LALT, KC_SPC), LT(SYMB, KC_SPC), LT(NUMB, KC_ESC),    LT(SYMB, KC_ENT), LT(NUMB, KC_ENT), KC_BSPC, KC_DEL
     ),
+
 /* Keymap 1: Symbols layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
@@ -72,6 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS, KC_AMPR, KC_EQL,  KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
                                         KC_TRNS, KC_TRNS, KC_SCLN, KC_EQL,         KC_EQL,  KC_SCLN, KC_PGUP, KC_DEL
     ),
+
 /* Keymap 2: Pad/Function layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
