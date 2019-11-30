@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,-------------------------------------------.                         ,------------------------------------------.
- * | L1/ESC |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
+ * | Esc/`  |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
  * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+-------|
  * |LCtl/ALT|   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  ' "  |
  * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+-------|
@@ -31,15 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | MMB   |                       | M_DN |
  *                                 ,------|-------|                      |-------|------.
  *                                 | SYMB | NUMB  |                      | SYMB  | NUMB |
- *                                 | LShft| Escape|                      | Mod   |Ent   |
+ *                                 | LAlt | Escape|                      | Super |  Ent |
  *                                 |      |       |                      |       |      |
  *                                 `--------------'                      `--------------'
  */
 [BASE] = LAYOUT_gergo(
-    LT(NUMB, KC_ESC), KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_PIPE,
+    GRAVE_ESC,        KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_PIPE,
     LCTL_T(KC_LALT),  KC_A,  KC_S,   KC_D,   KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,   KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_QUOT,
-    KC_LSFT,          KC_Z,  KC_X,   KC_C,   KC_V, KC_B, KC_BTN2, KC_BTN3,     KC_MS_WH_DOWN, KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
-  MT(MOD_LCTL, KC_TAB),     LSFT_T(KC_SPC), LT(SYMB, KC_LSFT), LT(NUMB, KC_ESC),    LT(SYMB, KC_ENT), LT(NUMB, KC_ENT), KC_BSPC, KC_DEL
+    KC_LSFT,          KC_Z,  KC_X,   KC_C,   KC_V, KC_B, KC_BTN2, KC_BTN3,     KC_MS_WH_DOWN, KC_NO,   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
+  MT(MOD_LCTL, KC_TAB),     LSFT_T(KC_SPC), LT(SYMB, KC_LALT), LT(NUMB, KC_ESC),    LT(SYMB, KC_LGUI), LT(NUMB, KC_ENT), KC_BSPC, KC_DEL
     ),
 
 /* Keymap 1: Symbols layer
