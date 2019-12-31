@@ -18,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,-------------------------------------------.                         ,------------------------------------------.
- * |   ~/`  |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
+ * |  Esc   |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
  * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+-------|
- * |  Alt   |   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  ' "  |
+ * |  ~/`   |   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  ' "  |
  * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+-------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  | RMB  |           | M_DN |   N  |   M  | ,  < | . >  | /  ? |  - _  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+-------'
@@ -36,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------'                      `--------------'
  */
 [BASE] = LAYOUT_gergo(
-    KC_GRAVE, KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_BSLASH,
-    KC_LALT,  KC_A,  KC_S,   KC_D,   KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,   KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_QUOT,
+    KC_ESC,   KC_Q,  KC_W,   KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_BSLASH,
+    KC_GRAVE, KC_A,  KC_S,   KC_D,   KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,   KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_QUOT,
     KC_LSFT,  KC_Z,  KC_X,   KC_C,   KC_V, KC_B, KC_BTN2, KC_BTN3,              KC_LALT, KC_MS_WH_DOWN,   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
     KC_LCTL,  LSFT_T(KC_SPC), LT(SYMB, KC_TAB), LT(NUMB, KC_ESC),               LT(SYMB, KC_LGUI), LT(NUMB, KC_ENT), KC_BSPC, KC_DEL
     ),
