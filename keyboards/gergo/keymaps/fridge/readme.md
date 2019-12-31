@@ -8,3 +8,11 @@ This is the default keymap for Gergo, it's based heavily off of the naps62 ErgoD
 To edit various settings, enable the 1u trackball and whatnot please modify /keyboards/gergo/keymaps/default/rules.mk
 
 Ideally you should copy this directory and make your changes there. If you come up with a good layout submit a PR!
+
+## Keycaps
+
+The gergo needs the following keys:
+
+38 x 1   u
+ 8 x 1.5 u
+ 4 x 2   u
