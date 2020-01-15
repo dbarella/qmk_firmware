@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,  LSFT_T(KC_SPC), LT(SYMB, KC_TAB), LT(NUMB, KC_ESC),                       LT(SYMB, KC_LGUI), LT(NUMB, KC_ENT), KC_BSPC, LCTL_T(KC_DEL)
     ),
 
-/* Keymap 1: Symbols laye
+/* Keymap 2: Symbols layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
  * |        |  !   |  @   |  {   |  }   |  |   |                         |      |      |      |      |      |  \ |   |
