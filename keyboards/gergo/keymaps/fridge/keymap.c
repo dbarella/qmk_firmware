@@ -12,21 +12,32 @@
 #define SYMB 1 // symbols
 #define NUMB 2 // numbers/motion
 
+// Tap dance declarations
+enum {
+  TD_LSHIFT_CAPS = 0
+};
+
+// Tap dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  // Tap once for LShift, twice for caps lock.
+  [TD_LSHIFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS)
+};
+
 // Blank template at the bottom
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
- * ,-------------------------------------------.                         ,------------------------------------------.
- * |  Esc   |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
- * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+-------|
- * | ` ~    |   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  - _  |
- * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+-------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | RMB  |           | M_DN |   N  |   M  | ,  < | . >  | /  ? |  ' "  |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+-------'
- *                    .------.   .-------------.                                 .-------.   .----------.
- *                    | Ctrl |   | Space/Shift |                                 | Bkspc |   | Ctrl/Del |
- *                    '------'   '-------------'                                 `-------.   '----------'
+ * ,--------------------------------------------.                         ,------------------------------------------.
+ * |  Esc    |   Q  |   W  |   E  |   R  |   T  |                         |   Y  |   U  |   I  |   O  |   P  |  | \  |
+ * |---------+------+------+------+------+------|------.           .------|------+------+------+------+------+-------|
+ * | ` ~     |   A  |   S  |  D   |   F  |   G  | LMB  |           | M_UP |   H  |   J  |   K  |   L  | ;  : |  - _  |
+ * |---------+------+------+------+------+------|------|           |------|------+------+------+------+------+-------|
+ * | LSh/Clk |   Z  |   X  |   C  |   V  |   B  | RMB  |           | M_DN |   N  |   M  | ,  < | . >  | /  ? |  ' "  |
+ * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+-------'
+ *         .------.   .-------------.                                 .-------.   .----------.
+ *         | Ctrl |   | Space/Shift |                                 | Bkspc |   | Ctrl/Del |
+ *         '------'   '-------------'                                 `-------.   '----------'
  *                                        ,-------.                      ,-------.
  *                                        | Alt   |                       | Alt  |
  *                                 ,------|-------|                      |-------|------.
@@ -36,10 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------'                      `--------------'
  */
 [BASE] = LAYOUT_gergo(
-    KC_ESC,   KC_Q,  KC_W,    KC_E,   KC_R, KC_T,                                               KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_BSLASH,
-    KC_GRAVE, KC_A,  KC_S,    KC_D,   KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,   KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_MINS,
-    KC_LSFT,  KC_Z,  KC_X,    KC_C,   KC_V, KC_B, KC_BTN2, KC_LALT,              KC_LALT, KC_MS_WH_DOWN,   KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_QUOT,
-    KC_LCTL,  LSFT_T(KC_SPC), LT(SYMB, KC_TAB), LT(NUMB, KC_ESC),                       LT(SYMB, KC_LGUI), LT(NUMB, KC_ENT), KC_BSPC, LCTL_T(KC_DEL)
+    KC_ESC,             KC_Q,  KC_W, KC_E, KC_R, KC_T,                                                        KC_Y,    KC_U, KC_I, KC_O,   KC_P,    KC_BSLASH,
+    KC_GRAVE,           KC_A,  KC_S, KC_D, KC_F, KC_G, KC_BTN1,                       KC_MS_WH_UP,            KC_H,    KC_J, KC_K, KC_L,   KC_SCLN, KC_MINS,
+    TD(TD_LSHIFT_CAPS), KC_Z,  KC_X, KC_C, KC_V, KC_B, KC_BTN2, KC_LALT,              KC_LALT, KC_MS_WH_DOWN, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_QUOT,
+               KC_LCTL, LSFT_T(KC_SPC), LT(SYMB, KC_TAB), LT(NUMB, KC_ESC),           LT(SYMB, KC_LGUI), LT(NUMB, KC_ENT), KC_BSPC, LCTL_T(KC_DEL)
     ),
 
 /* Keymap 2: Symbols layer
